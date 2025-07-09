@@ -60,7 +60,6 @@ func findChocoboHandler(c *gin.Context) {
 	}
 
 	if req.Name == "" {
-		// คืนค่าทั้งหมดถ้าไม่ใส่ชื่อ
 		c.JSON(http.StatusOK, chocoboDetail)
 		return
 	}
