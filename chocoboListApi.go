@@ -1,4 +1,4 @@
-package main
+package chocoboListApi
 
 import (
 	"net/http"
