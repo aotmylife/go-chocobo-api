@@ -38,6 +38,9 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/chocoboApi", getAllChocoboHandler)
+	router.GET("/ping", func(c *gin.Context) {
+		c.String(200, "test api")
+	})
 	router.POST("/findChocoboApi", findChocoboHandler)
 	router.Static("/images", "./images")
 
