@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -40,7 +41,7 @@ func main() {
 	router.POST("/findChocoboApi", findChocoboHandler)
 	router.Static("/chocoboApi/images", "./images")
 
-	router.Run(":8080")
+	router.Run(":" + getPort())
 }
 
 func getAllChocoboHandler(c *gin.Context) {
@@ -79,4 +80,12 @@ func findCharacterByName(name string) (Character, bool) {
 		}
 	}
 	return Character{}, false
+}
+
+func getPort() string {
+	port := os.Getenv("PORT")
+	if port == "" {
+		return "8080"
+	}
+	return port
 }
