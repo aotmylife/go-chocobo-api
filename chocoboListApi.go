@@ -39,7 +39,7 @@ func main() {
 
 	router.GET("/chocoboApi", getAllChocoboHandler)
 	router.POST("/findChocoboApi", findChocoboHandler)
-	router.Static("/chocoboApi/images", "./images")
+	router.Static("/images", "./images")
 
 	router.Run(":" + getPort())
 }
@@ -85,7 +85,7 @@ func findCharacterByName(name string) (Character, bool) {
 func getPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
-		return "443"
+		return "8080"
 	}
 	return port
 }
