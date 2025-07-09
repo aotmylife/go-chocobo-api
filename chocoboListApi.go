@@ -85,7 +85,7 @@ func findCharacterByName(name string) (Character, bool) {
 func getPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
-		return "8080"
+		return "443"
 	}
 	return port
 }
